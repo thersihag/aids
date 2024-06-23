@@ -1,0 +1,454 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 16px; /* Base font size */
+    line-height: 1.5; /* Line height for readability */
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1100; /* Ensure modal is on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    z-index: 1200; /* Ensure modal content is above modal background */
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Image */
+.modal-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* CSS for Faculty Members Section */
+.faculty-members {
+    margin-top: 40px;
+}
+
+.faculty-category {
+    margin-bottom: 30px;
+}
+
+.faculty-member {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.faculty-member h5 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.faculty-member p {
+    margin: 5px 0;
+}
+
+.faculty-member a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.faculty-member a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+h2 {
+    color: #1D2B53;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #1D2B53;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height: 50px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-links li {
+    margin: 0;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-icon {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* Header Section */
+.header {
+    position: relative;
+    background: url('header-bg.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.header-info h1 {
+    margin: 10px 0;
+    font-size: 2.5rem; /* Larger font size for headings */
+}
+
+.header-info h4 {
+    font-size: 1.2rem;
+}
+
+#courseName {
+    font-style: italic;
+    color: #FAEF5D;
+}
+
+/* Photo Slide Section */
+.photo-slide {
+    background-color: #FAEF5D;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.photo-slide img {
+    height: 250px;
+}
+
+/* Marquee Notice Bar */
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    background-color: #f3f3f3;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.marquee-content {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    text-align: center; /* Center align text initially */
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-right: 50vw; /* Start from center */
+    animation: marquee 30s linear infinite; /* Adjusted speed */
+}
+
+.marquee-pause-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.marquee-container a {
+    color: #007bff; /* Link color (blue) */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover State */
+.marquee-container a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Visited Links */
+.marquee-container a:visited {
+    color: purple; /* Visited link color */
+}
+
+/* Active State */
+.marquee-container a:active {
+    color: #ff0000; /* Red color when link is clicked */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(50vw); /* Start from center */
+    }
+    100% {
+        transform: translateX(-50vw); /* Move slowly towards left */
+    }
+}
+
+.marquee-paused {
+    animation-play-state: paused !important;
+}
+
+/* Important Dates Section */
+.important-dates table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.important-dates th, .important-dates td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.important-dates th {
+    background-color: #1D2B53;
+    color: white;
+}
+
+/* Important Links Section */
+.important-links ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.important-links li {
+    margin: 10px 0;
+}
+
+.important-links a {
+    color: #1D2B53;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Programs Section */
+.program {
+    margin-bottom: 20px;
+}
+
+.program h3 {
+    cursor: pointer;
+    color: #7E2553;
+}
+
+.program-details {
+    display: none;
+    margin-top: 10px;
+}
+
+.btn, .btn-border, .btn-pdf {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px 0;
+    text-align: center;
+    border: 2px solid #FF004D;
+    color: #FF004D;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #FF004D;
+    color: white;
+}
+
+.btn-pdf {
+    border-color: #7E2553;
+    color: #7E2553;
+}
+
+/* Entrance Test Section */
+.entrance-test {
+    background-color: #FAEF5D;
+    padding: 20px 0;
+}
+
+.entrance-test h3 {
+    color: #7E2553;
+}
+
+.entrance-test p {
+    margin: 10px 0;
+}
+
+/* Fee Structure Section */
+.fee-structure table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fee-structure th, .fee-structure td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.fee-structure th {
+    background-color: #1D2B53;
+    color: white;
+}
+
+/* Contact Information Section */
+.contact-information p {
+    margin: 5px 0;
+}
+
+/* Follow Us Section */
+.follow-us .social-icons {
+    color: #ddd;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #1D2B53;
+    font-size: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1D2B53;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: right;
+    }
+
+    .navbar-links a {
+        padding: 10px;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .header-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-info h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Table Styles */
+@media (max-width: 768px) {
+    .important-dates table, 
+    .fee-structure table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .important-dates th, 
+    .important-dates td,
+    .fee-structure th,
+    .fee-structure td {
+        white-space: nowrap;
+        min-width: 120px;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .important-dates th, 
+    .fee-structure th {
+        background-color: #1D2B53;
+        color: white;
+    }
+}

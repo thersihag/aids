@@ -5,7 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI & Data Sciences Admission Helpdesk</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+ <style>
+	    .alert {
+  padding: 15px;
+  background-color: #f44336; /* Red */
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsive layout - adjust padding */
+@media screen and (max-width: 600px) {
+  .alert {
+    padding: 10px;
+  }
+}
+	    </style>
+
+</head>
 <body>
 
 <div id="myModal" class="modal">
@@ -13,7 +33,13 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2>Department of AI & Data Sciences</h2>
-    <img src="rahul.jpg"  class="modal-image">
+   
+<div class="alert">
+  Important Reminder: Please Check Your Email for Online Application Updates or Corrections
+</div>
+	  <div class="alert">
+ Admission CLOSED
+</div>
   </div>
 </div>
 
@@ -54,7 +80,7 @@
     <div class="marquee-content">
 
 	  <span class="marquee-text">Important Reminder: Please Check Your Email for Online Application Updates or Corrections<img src="new.gif" style="height:20px"> </span>
-	  <span class="marquee-text">Admission <style="color:red">CLOSE</style><img src="new.gif" style="height:20px"> </span>
+	  <span class="marquee-text">Admission < span style="color:red">CLOSE</span><img src="new.gif" style="height:20px"> </span>
 
   </div>
     <button class="marquee-pause-btn" onclick="toggleMarquee()">Pause</button>

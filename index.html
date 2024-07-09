@@ -8,6 +8,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
  <style>
+
+        .notice-board {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .notice-board h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .notices {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        .notice {
+            background-color: #e9ecef;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .notice .date {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .notice p {
+            margin: 5px 0 0;
+            color: #555;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .controls button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+ 
 	    .alert {
   padding: 15px;
   background-color: #f44336; /* Red */
@@ -89,6 +149,63 @@ Admit Card for M.Sc Soon
     <button class="marquee-pause-btn" onclick="toggleMarquee()">Pause</button>
 </div>
 
+
+     <div class="notice-board">
+        <h2>Notice Board</h2>
+        <ul class="notices" id="notices">
+            <li class="notice">
+                <span class="date">8 July,2024</span>
+                <p><a href="ug-Important Information Regarding Admission Counseling, Required Documents, and Fee Structure (1) (2).pdf" target="_blank"> Important Information Regarding Admission Counseling, Required Documents, and
+Fee Structure <img src="new.gif" style="height:20px"><a></p>
+	<span class="date"><a href="ug-Important Information Regarding Admission Counseling, Required Documents, and Fee Structure (1) (2).pdf" target="_blank">Click Here</a></span>
+            </li>
+  <li class="notice">
+                <span class="date">5 July,2024</span>
+                <p><a href="AID_05July2024_09-14-32-89.pdf" target="_blank"> 
+	RESULT OF ENTRANCE TEST FOR INTEGRATED B.Sc.(HONS./HONS. WITH RESEARCH)- -M.Sc. COMPUTER SCIENCE(ARTIFICIAL INTELLIGENCE AND DATA SCIENCE)- 2024-25 HELD ON 04-07-2024</a><img src="new.gif" style="height:20px">
+<a></p>
+	  <span class="date"><a href="AID_05July2024_09-14-32-89.pdf" target="_blank">Click Here</a></span>
+           
+            </li>
+
+	            </li>
+  <li class="notice">
+                <span class="date">5 July,2024</span>
+                <p><a href="https://gjuonline.ac.in/ugadmission/" target="_blank"> 
+	Download Admit Card for UG-Entrance Exam<a></p>
+	  <span class="date"><a href="uhttps://gjuonline.ac.in/ugadmission/" target="_blank">Click Here</a></span>
+           
+            </li>
+        </ul>
+
+	
+        <div class="controls">
+            <button onclick="toggleScroll()">Pause</button>
+        </div>
+    </div>    
+
+
+    <script>
+        let scrolling = true;
+        const notices = document.getElementById('notices');
+
+        function scrollNotices() {
+            if (scrolling) {
+                notices.scrollBy(0, 1);
+                if (notices.scrollTop + notices.clientHeight >= notices.scrollHeight) {
+                    notices.scrollTop = 0;
+                }
+            }
+        }
+
+        function toggleScroll() {
+            scrolling = !scrolling;
+            const button = document.querySelector('.controls button');
+            button.textContent = scrolling ? 'Pause' : 'Resume';
+        }
+
+        setInterval(scrollNotices, 20);
+    </script>
 
     <!-- Important Dates Section -->
     <section class="important-dates" id="important-dates">

@@ -8,7 +8,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
  <style>
-
+  .first-counseling {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    animation: fadeInUp 0.6s ease-out;
+    max-width: 80%;
+    color: #333333;
+    position: relative;
+    overflow: hidden;
+	      margin: auto;
+    padding: 20px 0;
+  }
+  .first-counseling h2 {
+    margin-top: 0;
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  .first-counseling p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #333333;
+  }
+  .first-counseling strong {
+    font-weight: bold;
+    color: #ff5722;
+  }
+  .first-counseling .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #777777;
+    font-size: 20px;
+  }
+  .first-counseling .close-btn:hover {
+    color: #333333;
+  }
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+	 
         .notice-board {
             background-color: #fff;
 
@@ -152,6 +207,25 @@ Admit Card for M.Sc Soon
 </div>
 
 
+
+	<div class="first-counseling" id="firstcounselingnotice">
+  <button class="close-btn" onclick="firstcounselinghideNotice()">&times;</button>
+  <h2>First Counseling Notice</h2>
+  <p><strong>Date:</strong> July 11, 2024</p>
+  <p><strong>Time:</strong> 9:00 AM</p>
+  <p><strong>Venue:</strong> Room No. 123, TB 7, GJUST</p>
+  <p><strong>Mode:</strong>Offline</p>
+</div>
+<br>
+<script>
+  function firstcounselinghideNotice() {
+    var notice = document.getElementById('firstcounselingnotice');
+    notice.style.display = 'none';
+  }
+</script>
+
+
+	
      <div class="notice-board">
         <h2>Notice Board</h2>
         <ul class="notices" id="notices">

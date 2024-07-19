@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Data Sciences Admission Helpdesk</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background: url('header-image.jpg') no-repeat center center/cover;
+            height: 250px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        header .uni-name {
+            text-align: right;
+        }
+        header .uni-name h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        header .uni-name h4 {
+            margin: 5px 0;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: #333;
+            font-size: 28px;
+        }
+        .content p {
+            line-height: 1.6;
+        }
+        .section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .table, .table th, .table td {
+            border: 1px solid #ddd;
+        }
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f2f2f2;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #575757;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer div {
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                height: auto;
+            }
+            nav {
+                flex-direction: column;
+            }
+        }
+
+    .mid-container {
+            background: white;
+
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            width: 70%;
+  margin: auto;
+  padding: 10px;
+
+        }
+
+        .mid-h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .mid-form {
+            margin-bottom: 20px;
+        }
+
+        .mid-input {
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .mid-button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .mid-button:hover {
+            background: #218838;
+        }
+
+        .mid-result-card {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mid-result-card p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .mid-result-card span {
+            font-weight: bold;
+        }
+	    </style>
+
+</head>
+<body>
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Department of AI & Data Sciences</h2>
+ 
+ <img src="WhatsApp Image 2024-07-19 at 6.18.47 PM.jpeg"  class="modal-image">
+  </div>
+	  <br><br>
+
+
+  </div>
+</div>
+
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-logo">
+                <img src="logo.png" alt="University Logo">
+            </div>
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+
+            </ul>
+            <div class="navbar-toggle">
+ <a href="index.html" style="color:white;text-decoration:none">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <div class="header-info">
+                <h4>Department of AI & Data Sciences,GJUS&T-Hisar</h4>
+                <h1>M.Sc. Computer Science (Artificial Intelligence & Data Science)</h1>
+
+            </div>
+        </div>
+    </header>
+
+
+
+<br>
+
+<marquee width="100%" direction="left" scrollamount="5" style="background-color:yellow;font-size:1.2rem">
+<a href="MID_19July2024_15-22-44-43.pdf">Download RESULT OF ENTRANCE TEST FOR M.Sc. COMPUTER SCIENCE- (ARTIFICIAL INTELLIGENCE AND DATA SCIENCE)-2024-25 HELD ON 19-07-2024 </a>
+
+<a href="MID_19July2024_15-22-44-43.pdf">Download RESULT OF ENTRANCE TEST FOR M.Sc. COMPUTER SCIENCE- (ARTIFICIAL INTELLIGENCE AND DATA SCIENCE)-2024-25 HELD ON 19-07-2024 </a>
+
+<a href="MID_19July2024_15-22-44-43.pdf">Download RESULT OF ENTRANCE TEST FOR M.Sc. COMPUTER SCIENCE- (ARTIFICIAL INTELLIGENCE AND DATA SCIENCE)-2024-25 HELD ON 19-07-2024 </a>
+</marquee>
+	<br><br>
+   <div class="mid-container">
+        <h1 class="mid-h1">Entrance Test Result</h1>
+        <form id="resultForm" class="mid-form">
+            <label for="rollNo">Enter Roll Number:</label>
+            <input type="text" id="rollNo" name="rollNo" class="mid-input" required>
+            <button type="submit" class="mid-button">Get Result</button>
+        </form>
+        <div id="resultCard" class="mid-result-card">
+            <h2>Result </h2>
+            <p><span>Roll No:</span> <span id="cardRollNo"></span></p>
+            <p><span>Name:</span> <span id="cardName"></span></p>
+            <p><span>Marks Obtained:</span> <span id="cardMarks"></span></p>
+
+<br>
+<marquee width="60%" direction="left" scrollamount="2" style="background-color:yellow">
+<a href="MID_19July2024_15-22-44-43.pdf">Download RESULT OF ENTRANCE TEST FOR M.Sc. COMPUTER SCIENCE- (ARTIFICIAL INTELLIGENCE AND DATA SCIENCE)-2024-25 HELD ON 19-07-2024 </a>
+</marquee>
+        </div>
+    </div>
+    <script>
+        const results = [
+            { rollNo: "42780081", name: "NEHA", marks: 38 },
+            { rollNo: "42780082", name: "NEHA", marks: 44 },
+            { rollNo: "42780083", name: "MONU", marks: 41 },
+            { rollNo: "42780084", name: "POONAM", marks: 44 },
+            { rollNo: "42780085", name: "MANISHA", marks: 35 },
+            { rollNo: "42780086", name: "GOURAV", marks: 32 },
+            { rollNo: "42780089", name: "HEENA", marks: 43 },
+            { rollNo: "42780090", name: "KESHAV KUMAR", marks: 41 },
+            { rollNo: "42780091", name: "PRIYA", marks: 29 },
+            { rollNo: "42780092", name: "JYOTI VERMA", marks: 26 },
+            { rollNo: "42780093", name: "MONIKA", marks: 30 },
+            { rollNo: "42780094", name: "SUDESH KUMARI", marks: 51 },
+            { rollNo: "42780096", name: "HIMANSHU", marks: 25 },
+            { rollNo: "42780097", name: "PRIYANKA", marks: 31 },
+            { rollNo: "42780098", name: "KARAN SURYAVEER PARTAP SINGH RAJPUROHIT", marks: 26 },
+            { rollNo: "42780099", name: "INDU BALA", marks: 38 },
+            { rollNo: "42780100", name: "JAYANT PRATAP", marks: 39 },
+            { rollNo: "42780101", name: "ROBIN", marks: 52 },
+            { rollNo: "42780102", name: "INDRAWATI", marks: 41 },
+            { rollNo: "42780103", name: "TANNU", marks: 47 },
+            { rollNo: "42780104", name: "NITAKSHI", marks: 42 },
+            { rollNo: "42780105", name: "HARDIKA", marks: 36 },
+            { rollNo: "42780106", name: "ANJALI", marks: 37 },
+            { rollNo: "42780107", name: "JYOTI", marks: 30 },
+            { rollNo: "42780108", name: "VANDANA", marks: 40 },
+            { rollNo: "42780109", name: "NEELIMA", marks: 37 },
+            { rollNo: "42780110", name: "JYOTI", marks: 36 },
+            { rollNo: "42780111", name: "ANURAG", marks: 56 },
+            { rollNo: "42780113", name: "KOMAL", marks: 58 },
+            { rollNo: "42780114", name: "AMAN SHARMA", marks: 39 },
+            { rollNo: "42780115", name: "RITIKA", marks: 39 },
+            { rollNo: "42780116", name: "AAKASH SAINI", marks: 17 },
+            { rollNo: "42780117", name: "SHIWANI", marks: 32 },
+            { rollNo: "42780118", name: "JYOTI RANGA", marks: 31 },
+            { rollNo: "42780120", name: "PRERNA", marks: 41 },
+            { rollNo: "42780122", name: "NEHA", marks: 34 },
+            { rollNo: "42780123", name: "MONA", marks: 28 },
+            { rollNo: "42780124", name: "RIYA", marks: 31 },
+            { rollNo: "42780125", name: "MANSI", marks: 38 },
+            { rollNo: "42780126", name: "RISHITA", marks: 25 },
+            { rollNo: "42780127", name: "RAHISA BANO", marks: 49 },
+            { rollNo: "42780128", name: "RAVITA", marks: 34 },
+            { rollNo: "42780129", name: "VIVEK", marks: 35 },
+            { rollNo: "42780131", name: "PANKAJ KUMAR", marks: 29 },
+            { rollNo: "42780133", name: "NITIKA", marks: 32 },
+            { rollNo: "42780134", name: "TANISHA", marks: 32 },
+            { rollNo: "42780135", name: "HARSH", marks: 48 },
+            { rollNo: "42780136", name: "MANISHA", marks: 35 },
+            { rollNo: "42780137", name: "BHARTI", marks: 30 },
+            { rollNo: "42780138", name: "HITESH", marks: 45 },
+            { rollNo: "42780139", name: "JASMEEN KAUR", marks: 39 },
+            { rollNo: "42780140", name: "KAFFI RANI", marks: 32 },
+            { rollNo: "42780142", name: "DISHA", marks: 28 },
+            { rollNo: "42780143", name: "RITU DEVI", marks: 29 },
+            { rollNo: "42780144", name: "JYOTI", marks: 30 },
+            { rollNo: "42780145", name: "RINKU", marks: 29 },
+            { rollNo: "42780146", name: "ANUJ KUMAR", marks: 19 },
+            { rollNo: "42780147", name: "KOMAL", marks: 41 },
+            { rollNo: "42780150", name: "LOKESH", marks: 37 },
+            { rollNo: "42780151", name: "PRIYA", marks: 28 },
+            { rollNo: "42780152", name: "SHALU", marks: 32 },
+            { rollNo: "42780153", name: "RINKU RANI", marks: 24 },
+            { rollNo: "42780154", name: "VIDHYA", marks: 35 },
+            { rollNo: "42780155", name: "SHEETAL", marks: 34 },
+            { rollNo: "42780156", name: "PARI", marks: 33 },
+            { rollNo: "42780157", name: "HIMANSHU", marks: 35 },
+            { rollNo: "42780158", name: "SONAM", marks: 33 },
+            { rollNo: "42780159", name: "NANCY", marks: 26 },
+            { rollNo: "42780160", name: "HEMANT", marks: 39 },
+            { rollNo: "42780161", name: "ANKIT", marks: 39 },
+            { rollNo: "42780162", name: "SHRUTI", marks: 36 },
+            { rollNo: "42780163", name: "AMIT", marks: 24 },
+            { rollNo: "42780164", name: "RITU", marks: 28 },
+            { rollNo: "42780165", name: "KARTIK", marks: 39 },
+            { rollNo: "42780166", name: "KOMAL", marks: 34 },
+            { rollNo: "42780167", name: "MONU", marks: 28 },
+            { rollNo: "42780168", name: "ROSHANI", marks: 37 },
+            { rollNo: "42780169", name: "PARMINDER", marks: 29 },
+            { rollNo: "42780170", name: "SWEETY", marks: 36 },
+            { rollNo: "42780171", name: "ROHIT", marks: 28 },
+            { rollNo: "42780172", name: "KANIKA", marks: 36 },
+            { rollNo: "42780173", name: "SAKSHI", marks: 28 },
+            { rollNo: "42780174", name: "KAMAL", marks: 30 },
+            { rollNo: "42780175", name: "KRISHNA", marks: 33 },
+            { rollNo: "42780176", name: "VAISHALI", marks: 29 },
+            { rollNo: "42780177", name: "SANGITA", marks: 27 },
+            { rollNo: "42780178", name: "VIDHYA", marks: 34 },
+            { rollNo: "42780179", name: "SARITA", marks: 25 },
+            { rollNo: "42780180", name: "RAVINA", marks: 25 },
+            { rollNo: "42780181", name: "MANISHA", marks: 23 },
+            { rollNo: "42780182", name: "AMANDEEP", marks: 28 },
+            { rollNo: "42780183", name: "HIMANSHI", marks: 25 },
+            { rollNo: "42780184", name: "JYOTI", marks: 21 },
+            { rollNo: "42780185", name: "PRITI", marks: 28 },
+            { rollNo: "42780186", name: "ANJALI", marks: 26 },
+            { rollNo: "42780187", name: "SOURABH", marks: 26 },
+            { rollNo: "42780188", name: "PINKI", marks: 27 },
+            { rollNo: "42780189", name: "RAHUL KUMAR", marks: 28 },
+            { rollNo: "42780190", name: "ANUPAMA", marks: 25 },
+            { rollNo: "42780191", name: "ROHIT", marks: 32 },
+            { rollNo: "42780192", name: "SHUBH", marks: 27 },
+            { rollNo: "42780193", name: "ROHIT", marks: 29 },
+            { rollNo: "42780194", name: "JYOTI", marks: 22 },
+            { rollNo: "42780195", name: "YASHPAL", marks: 28 },
+            { rollNo: "42780196", name: "BANDANA", marks: 28 },
+            { rollNo: "42780197", name: "ANKIT", marks: 25 },
+            { rollNo: "42780198", name: "ANITA", marks: 29 },
+            { rollNo: "42780199", name: "LALITA", marks: 23 },
+            { rollNo: "42780200", name: "RAHUL KUMAR", marks: 27 }
+        ];
+
+        const form = document.getElementById("resultForm");
+        const resultCard = document.getElementById("resultCard");
+        const cardRollNo = document.getElementById("cardRollNo");
+        const cardName = document.getElementById("cardName");
+        const cardMarks = document.getElementById("cardMarks");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const rollNo = document.getElementById("rollNo").value.trim();
+            const result = results.find(r => r.rollNo === rollNo);
+
+            if (result) {
+                cardRollNo.textContent = result.rollNo;
+                cardName.textContent = result.name;
+                cardMarks.textContent = result.marks;
+                resultCard.style.display = "block";
+            } else {
+                alert("Result not found for the entered roll number.");
+                resultCard.style.display = "none";
+            }
+        });
+    </script>
+
+</div>
+<div class="content">
+    <div class="section">
+   
+        <p>The candidates have to be physically present for the counselling.</p>
+
+        <h3>Counseling Dates:</h3>
+        <table class="table">
+            <tr>
+                <th>First Counseling</th>
+                <th>Second Counseling</th>
+                <th>Third Counseling</th>
+            </tr>
+            <tr>
+                <td>July 22, 2024</td>
+                <td>July 26, 2024</td>
+                <td>Aug 1, 2024</td>
+            </tr>
+        </table>
+
+        <h3>Required Documents:</h3>
+        <ul>
+            <li>Admit Card</li>
+            <li>Printed Applications form</li>
+            <li>10th DMC</li>
+            <li>Result/12th DMC</li>
+            <li>All Semesters Marksheets</li>
+            <li>Character Certificate issued by last attended institute in original</li>
+            <li>Gap year Certificate (if any)</li>
+            <li>Migration Certificate</li>
+            <li>Category and latest EWS Certificate</li>
+            <li>Haryana Domicile Certificate if last qualifying outside from Haryana</li>
+            <li>Income certificate for admission under SC/BC category</li>
+            <li>4 colored passport size photo</li>
+            <li>Non creamy layer affidavit for BC-A/BC-B category</li>
+        </ul>
+
+        <p><strong>Note:</strong> If a candidate is admitted, he/she has to deposit the fee on spot through online mode (Debit/Credit Card /Net Banking) only.</p>
+
+        <h3>Fee to be paid:</b>31,500</b></h3>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Follow Us Section -->
+    <section class="follow-us">
+        <div class="container">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a target="_blank"      href="https://www.facebook.com/datagjust/"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank"      href="https://www.twitter.com/gjust_ds"><i class="fab fa-twitter"></i></a>
+                <a target="_blank"      href="https://www.instagram.com/gjust_ds/"><i class="fab fa-instagram"></i></a>
+                <a target="_blank"      href="https://www.linkedin.com/company/datagjust"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

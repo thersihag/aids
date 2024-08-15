@@ -935,7 +935,69 @@ Fee Structure <img src="new.gif" style="height:20px"><a></p>
         >
     </div>
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide-Up Notification</title>
+    <style>
+        .notification-banner {
+            position: fixed;
+            bottom: 0;
+            left: ;
+            width: 100%;
+            background-color: #673AB7;
+            color: #ffeb3b;
+            padding: -10px;
+            text-align: center;
+            transform: translateY(100%);
+            animation: slideUp 2s forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1000;
+        }
+        .notification-banner .close-btn {
+            background: #f44336;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+        .notification-banner a {
+            color: #ffeb3b;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="notification-banner">
+        <button class="close-btn" onclick="closeBanner()">×</button>
+        <a href="Pamphlate for physical counselling B. Tech. First year, 2021_14August2024_12-12-20-82.pdf" target="_blank">
+            <p>Institute Level Physical Counseling for B.Tech. Physical Counseling Schedule for admission against vacant/left-over seats in B.Tech. (1st Year).</p>
+        </a>
+        <a href="https://gjuonline.ac.in/pgadmission/" target="_blank">
+            <p>Fresh Online Applications for M.Sc. Program. Submit your online applications with the requisite registration fee up to 16.08.2024 (10:00 a.m.)</p>
+        </a>
+    </div>
+    <script>
+        function closeBanner() {
+            document.querySelector('.notification-banner').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
     <script src="script.js"></script>
 </body>
 </html>

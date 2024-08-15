@@ -134,6 +134,24 @@
   font-weight: bold;
 }
 
+
+	    .notification-container {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.notification-box h3 {
+    margin: 0 0 10px;
+}
+
+.notification-box p {
+    margin: 0 0 15px;
+}
+
+.notification-box a {
+    font-size: 1.1rem;
+}
+
 /* Responsive layout - adjust padding */
 @media screen and (max-width: 600px) {
   .alert {
@@ -255,7 +273,20 @@
   }
 </script>
 
-	
+	      <div class="notification-container">
+    <!-- Fresh Online Applications Notice -->
+    <div class="notification-box" style="background-color:#f8f9fa; border: 2px solid #007bff; padding: 15px; margin-bottom: 20px; text-align: center;">
+        <h3><strong>Fresh Online Applications for M.Sc. Program</strong></h3>
+        <p>Submit your online applications with the requisite registration fee up to 16.08.2024 (10:00 a.m.)</p>
+        <a href="https://gjuonline.ac.in/pgadmission/" target="_blank" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Submit Application</a>
+    </div>
+
+    <!-- Institute Level Physical Counseling Notice -->
+    <div class="notification-box" style="background-color:#f8f9fa; border: 2px solid #28a745; padding: 15px; text-align: center;">
+        <h3><strong>Institute Level Physical Counseling for B.Tech.</strong></h3>
+        <p>Physical Counseling Schedule for admission against vacant/left-over seats in B.Tech. (1st Year)</p>
+        <a href="https://gjuonline.ac.in/admbtech2023/" target="_blank" style="background-color: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Submit Application</a>
+    </div>
      <div class="notice-board">
         <h2>Notice Board</h2>
         <ul class="notices" id="notices">
@@ -424,6 +455,7 @@ Fee Structure <img src="new.gif" style="height:20px"><a></p>
 
         setInterval(scrollNotices, 100);
     </script>
+
 
     <!-- Important Dates Section -->
     <section class="important-dates" id="important-dates">

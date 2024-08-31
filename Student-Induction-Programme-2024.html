@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - AI & Data Sciences Admission Helpdesk</title>
+    <title>Student Induction Programme 2024</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -63,35 +63,31 @@
         .content p {
             line-height: 1.6;
         }
-        .section {
-            background-color: white;
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
             margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .contact-form input, .contact-form textarea {
-            padding: 10px;
+        .schedule-table th, .schedule-table td {
             border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+            padding: 10px;
+            text-align: center;
         }
-        .contact-form button {
+        .schedule-table th {
+            background-color: #f2f2f2;
+        }
+        .register-button {
+            display: inline-block;
             padding: 10px 20px;
-            background: #28a745;
+            background-color: #28a745;
             color: white;
-            border: none;
+            text-decoration: none;
             border-radius: 5px;
-            cursor: pointer;
             font-size: 16px;
+            margin-top: 20px;
         }
-        .contact-form button:hover {
-            background: #218838;
+        .register-button:hover {
+            background-color: #218838;
         }
         .footer {
             background-color: #333;
@@ -114,6 +110,11 @@
             nav {
                 flex-direction: column;
             }
+            .schedule-table th, .schedule-table td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>
@@ -127,6 +128,7 @@
             <ul class="navbar-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="student-induction-programme-2024.html">SIP 2024</a></li>
             </ul>
             <div class="navbar-toggle">
                 <a href="index.html" style="color:white;text-decoration:none">Home</a>
@@ -139,48 +141,174 @@
         <div class="overlay"></div>
         <div class="header-content">
             <div class="header-info">
-                <h4>Department of AI & Data Sciences, GJUS&T-Hisar</h4>
-                <h1>Contact Us</h1>
+                <h4>Faculty of Engineering & Technology, GJUS&T</h4>
+                <h1>Student Induction Programme 2024</h1>
             </div>
         </div>
     </header>
 
     <!-- Content Section -->
     <div class="content">
-        <div class="section">
-            <h2>Get in Touch</h2>
-            <p>If you have any questions or need further information, please feel free to contact us using the form below. We will get back to you as soon as possible.</p>
-            
-            <form action="submit_contact_form.php" method="post" class="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+        <h2>Student Induction Programme (SIP) 2024-2025</h2>
+        <p><strong>Tentative Schedule (02.09.2024 to 20.09.2024)</strong></p>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>9:30 AM to 10:30 AM</th>
+                    <th>10:30 AM to 11:30 AM</th>
+                    <th>11:30 AM to 12:30 PM</th>
+                    <th>1:30 PM to 2:30 PM</th>
+                    <th>2:30 PM to 3:30 PM</th>
+                    <th>3:30 PM to 4:30 PM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>02.09.2024</td>
+                    <td>Registration of Student Induction Program-2024</td>
+                    <td>Prof. Sandeep Arya, Keynote Speaker</td>
+                    <td>Prof. Sujata Sanghi & Dean FET, Prof. O.P. Sangwan - "Overview of Hostel Facilities"</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>03.09.2024</td>
+                    <td>Dr. Narender Chauhan, Associate Librarian - "Library: An Introduction"</td>
+                    <td>Dr. Anju Gupta, Coordinator, NSS - "National Service Scheme"</td>
+                    <td>Prof. Rakesh Bhamhai, Coordinator, NCC - "Life & Student"</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>04.09.2024</td>
+                    <td>Prof. Rakesh Bhamhai, Coordinator, NCC - "Life & Student"</td>
+                    <td>Prof. Rajiv Tamak, Coordinator, NCC</td>
+                    <td>UHV L-I</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>05.09.2024</td>
+                    <td>UHV L-II</td>
+                    <td>UHV L-III</td>
+                    <td>UHV L-IV</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>06.09.2024</td>
+                    <td>UHV L-V</td>
+                    <td>UHV L-VI</td>
+                    <td>UHV L-VII</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>09.09.2024</td>
+                    <td>Dr. Vimal Jha, Motivational Speaker & Learning Skill Expert</td>
+                    <td>Dr. Aman Manchanda - "Importance of Maintaining Good Psychological Health"</td>
+                    <td>Prof. Sandeep Rana - "Examination Rules & Regulations"</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>10.09.2024</td>
+                    <td>Dr. Yash Pal Singla, Controller of Examination (COE)</td>
+                    <td>Dr. Pratap Singh Malik, Director, Training & Placement Cell</td>
+                    <td>Sh. Deven Kalra - "Proficiency module for computer familiarity (Module on MS Office)"</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>11.09.2024</td>
+                    <td>Sh. Deven Kalra - "Proficiency module for computer familiarity (Module on MS Office)"</td>
+                    <td>Sh. Deven Kalra - "Proficiency module for computer familiarity (Module on MS Office)"</td>
+                    <td>Prof. Sanjeev Kumar, HSB - "Building Self to Face the Challenges"</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>12.09.2024</td>
+                    <td>"Proficiency Module in English (Technical Writing)"</td>
+                    <td>"Proficiency Module in English (Importance of Phonetics)"</td>
+                    <td>Sh. Durgesh, Senior Bank Manager, PNB, GJU - "Banking Systems"</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>13.09.2024</td>
+                    <td>Prof. Sunita Rani, GJU S&T, Hisar</td>
+                    <td>Sh. Durgesh, Senior Bank Manager, PNB, GJU - "Banking Systems"</td>
+                    <td>Prof. Dalbir Singh, Director, Sports</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>16.09.2024</td>
+                    <td>Prof. Sanjeev Kumar, HSB - "Building Self to Face the Challenges"</td>
+                    <td>Prof. Dalbir Singh, Director, Sports</td>
+                    <td>Dr. Jitender Jangra - "Brain Balancing to enhance concentration and memory retention"</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>17.09.2024</td>
+                    <td>Prof. Sandeep Rana - "Self-Empowerment"</td>
+                    <td>Col. (Retd.) Bir Singh Sihag - "Life Values"</td>
+                    <td>Prof. Anjan Kumar Baral, Department of Printing Technology - "Future Technologies"</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>18.09.2024</td>
+                    <td>Dr. Jitender Jangra - "Brain Balancing to enhance concentration and memory retention"</td>
+                    <td>Col. (Retd.) Bir Singh Sihag - "Life Values"</td>
+                    <td>Prof. Anjan Kumar Baral, Department of Printing Technology - "Future Technologies"</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>19.09.2024</td>
+                    <td>Departmental Activities</td>
+                    <td>Departmental Activities</td>
+                    <td>Departmental Activities</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>20.09.2024</td>
+                    <td>Valedictory Session</td>
+                    <td>Departmental Activities</td>
+                    <td>Departmental Activities</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+            </tbody>
+        </table>
 
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+        <p><strong>Registration for STUDENT INDUCTION PROGRAM (SIP) 2024</strong></p>
+        <p>Asst Prof., Mentor B.Tech (A.I. & D.S.) 1st Year</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSctEVXfoEZyVm7q6_m_FnrzifGtUhIpb5nR2NM6fjhTfKRBsg/viewform" class="register-button" target="_blank">Register Here</a>
+        
+        <p><strong>Contact:</strong> Dr. Sandeep Dhankhar, +91 98126 69207</p>
     </div>
-
-    <!-- Follow Us Section -->
-    <section class="follow-us">
-        <div class="container">
-            <h2>Follow Us</h2>
-            <div class="social-icons">
-                <a target="_blank" href="https://www.facebook.com/datagjust/"><i class="fab fa-facebook-f"></i></a>
-                <a target="_blank" href="https://www.twitter.com/gjust_ds"><i class="fab fa-twitter"></i></a>
-                <a target="_blank" href="https://www.instagram.com/gjust_ds/"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/company/datagjust"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer Section -->
     <footer class="footer">

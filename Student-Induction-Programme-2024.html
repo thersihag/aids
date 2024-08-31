@@ -15,6 +15,13 @@
             background-color: #f5f5f5;
             color: #333;
         }
+        .notice-bar {
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
         header {
             background: url('header-image.jpg') no-repeat center center/cover;
             height: 250px;
@@ -63,17 +70,17 @@
         .content p {
             line-height: 1.6;
         }
-        .schedule-table {
+        .schedule-table, .bridge-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
-        .schedule-table th, .schedule-table td {
+        .schedule-table th, .schedule-table td, .bridge-table th, .bridge-table td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
-        .schedule-table th {
+        .schedule-table th, .bridge-table th {
             background-color: #f2f2f2;
         }
         .register-button {
@@ -110,7 +117,7 @@
             nav {
                 flex-direction: column;
             }
-            .schedule-table th, .schedule-table td {
+            .schedule-table th, .schedule-table td, .bridge-table th, .bridge-table td {
                 display: block;
                 width: 100%;
                 box-sizing: border-box;
@@ -119,6 +126,11 @@
     </style>
 </head>
 <body>
+    <!-- Notice Bar -->
+    <div class="notice-bar">
+        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSctEVXfoEZyVm7q6_m_FnrzifGtUhIpb5nR2NM6fjhTfKRBsg/viewform" class="register-button" target="_blank">Register for SIP 2024</a> | <a href="Tentative_Schedule_SIP_2024.pdf" class="register-button" target="_blank">Download Schedule</a></p>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
@@ -296,6 +308,33 @@
                     <td>Valedictory Session</td>
                     <td>Departmental Activities</td>
                     <td>Departmental Activities</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Time Table - Bridge Course during Student Induction Program - 2024</h2>
+
+        <table class="bridge-table">
+            <thead>
+                <tr>
+                    <th>Branches</th>
+                    <th>1:30 PM - 2:30 PM</th>
+                    <th>2:30 PM - 3:30 PM</th>
+                    <th>3:30 PM - 4:30 PM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Group A : CSE-I, II; CSE(AI&ML)-I, II; IT; AI&DS</td>
+                    <td>Chemistry</td>
+                    <td>Mathematics</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>Group B : ME; ECE+EBME; E&C; EE; PT+PKG; CE+FT</td>
                     <td>Chemistry</td>
                     <td>Mathematics</td>
                     <td>Physics</td>

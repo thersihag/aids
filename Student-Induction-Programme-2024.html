@@ -74,6 +74,9 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            overflow-x: auto;
+            display: block;
+            white-space: nowrap;
         }
         .schedule-table th, .schedule-table td, .bridge-table th, .bridge-table td {
             border: 1px solid #ddd;
@@ -109,27 +112,92 @@
             cursor: pointer;
         }
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                height: auto;
-            }
-            nav {
-                flex-direction: column;
+            .schedule-table, .bridge-table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
             .schedule-table th, .schedule-table td, .bridge-table th, .bridge-table td {
                 display: block;
                 width: 100%;
                 box-sizing: border-box;
             }
+            .schedule-table thead, .bridge-table thead {
+                display: none;
+            }
+            .schedule-table tr, .bridge-table tr {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 10px;
+            }
+            .schedule-table td, .bridge-table td {
+                text-align: left;
+                border: none;
+                padding-left: 50%;
+                position: relative;
+            }
+            .schedule-table td::before, .bridge-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 10px;
+                font-weight: bold;
+                white-space: nowrap;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Notice Bar -->
-    <div class="notice-bar">
-        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSctEVXfoEZyVm7q6_m_FnrzifGtUhIpb5nR2NM6fjhTfKRBsg/viewform" class="register-button" target="_blank">Register for SIP 2024</a> | <a href="Tentative_Schedule_SIP_2024.pdf" class="register-button" target="_blank">Download Schedule</a></p>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Notification Banner</title>
+    <style>
+        .notification {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #007bff;
+            color: #fff;
+            padding: 15px;
+            transform: translateY(-100%);
+            transition: transform 0.5s ease-in-out;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .notification.show {
+            transform: translateY(0);
+        }
+        .notification a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .close-btn {
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification" id="notificationBar">
+        <span>Register for the <strong>Student Induction Programme 2024</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSctEVXfoEZyVm7q6_m_FnrzifGtUhIpb5nR2NM6fjhTfKRBsg/viewform">here</a> | <a href="Tentative_Schedule_SIP_2024.pdf">Download Schedule</a></span>
+        <span class="close-btn" onclick="closeNotification()">×</span>
     </div>
+    <script>
+        window.onload = () => document.getElementById('notificationBar').classList.add('show');
+        function closeNotification() {
+            document.getElementById('notificationBar').style.transform = 'translateY(-100%)';
+        }
+    </script>
+</body>
+</html>
+
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -178,145 +246,144 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>02.09.2024</td>
-                    <td>Registration of Student Induction Program-2024</td>
-                    <td>Prof. Sandeep Arya, Keynote Speaker</td>
-                    <td>Prof. Sujata Sanghi & Dean FET, Prof. O.P. Sangwan - "Overview of Hostel Facilities"</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">02.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Registration of Student Induction Program-2024</td>
+                    <td data-label="10:30 AM to 11:30 AM">Prof. Sandeep Arya, Keynote Speaker</td>
+                    <td data-label="11:30 AM to 12:30 PM">Prof. Sujata Sanghi & Dean FET, Prof. O.P. Sangwan - "Overview of Hostel Facilities"</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>03.09.2024</td>
-                    <td>Dr. Narender Chauhan, Associate Librarian - "Library: An Introduction"</td>
-                    <td>Dr. Anju Gupta, Coordinator, NSS - "National Service Scheme"</td>
-                    <td>Prof. Rakesh Bhamhai, Coordinator, NCC - "Life & Student"</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">03.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Dr. Narender Chauhan, Associate Librarian - "Library: An Introduction"</td>
+                    <td data-label="10:30 AM to 11:30 AM">Dr. Anju Gupta, Coordinator, NSS - "National Service Scheme"</td>
+                    <td data-label="11:30 AM to 12:30 PM">Prof. Rakesh Bhamhai, Coordinator, NCC - "Life & Student"</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>04.09.2024</td>
-                    <td>Prof. Rakesh Bhamhai, Coordinator, NCC - "Life & Student"</td>
-                    <td>Prof. Rajiv Tamak, Coordinator, NCC</td>
-                    <td>UHV L-I</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">04.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Prof. Rakesh Bhamhai, Coordinator, NCC - "Life & Student"</td>
+                    <td data-label="10:30 AM to 11:30 AM">Prof. Rajiv Tamak, Coordinator, NCC</td>
+                    <td data-label="11:30 AM to 12:30 PM">UHV L-I</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>05.09.2024</td>
-                    <td>UHV L-II</td>
-                    <td>UHV L-III</td>
-                    <td>UHV L-IV</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">05.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">UHV L-II</td>
+                    <td data-label="10:30 AM to 11:30 AM">UHV L-III</td>
+                    <td data-label="11:30 AM to 12:30 PM">UHV L-IV</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>06.09.2024</td>
-                    <td>UHV L-V</td>
-                    <td>UHV L-VI</td>
-                    <td>UHV L-VII</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">06.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">UHV L-V</td>
+                    <td data-label="10:30 AM to 11:30 AM">UHV L-VI</td>
+                    <td data-label="11:30 AM to 12:30 PM">UHV L-VII</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>09.09.2024</td>
-                    <td>Dr. Vimal Jha, Motivational Speaker & Learning Skill Expert</td>
-                    <td>Dr. Aman Manchanda - "Importance of Maintaining Good Psychological Health"</td>
-                    <td>Prof. Sandeep Rana - "Examination Rules & Regulations"</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">09.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Dr. Vimal Jha, Motivational Speaker & Learning Skill Expert</td>
+                    <td data-label="10:30 AM to 11:30 AM">Dr. Aman Manchanda - "Importance of Maintaining Good Psychological Health"</td>
+                    <td data-label="11:30 AM to 12:30 PM">Prof. Sandeep Rana - "Examination Rules & Regulations"</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>10.09.2024</td>
-                    <td>Dr. Yash Pal Singla, Controller of Examination (COE)</td>
-                    <td>Dr. Pratap Singh Malik, Director, Training & Placement Cell</td>
-                    <td>Sh. Deven Kalra - "Proficiency module for computer familiarity (Module on MS Office)"</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">10.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Dr. Yash Pal Singla, Controller of Examination (COE)</td>
+                    <td data-label="10:30 AM to 11:30 AM">Dr. Pratap Singh Malik, Director, Training & Placement Cell</td>
+                    <td data-label="11:30 AM to 12:30 PM">Sh. Deven Kalra - "Proficiency module for computer familiarity (Module on MS Office)"</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>11.09.2024</td>
-                    <td>Sh. Deven Kalra - "Proficiency module for computer familiarity (Module on MS Office)"</td>
-                    <td>Sh. Deven Kalra - "Proficiency module for computer familiarity (Module on MS Office)"</td>
-                    <td>Prof. Sanjeev Kumar, HSB - "Building Self to Face the Challenges"</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">11.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Sh. Deven Kalra - "Proficiency module for computer familiarity (Module on MS Office)"</td>
+                    <td data-label="10:30 AM to 11:30 AM">Sh. Deven Kalra - "Proficiency module for computer familiarity (Module on MS Office)"</td>
+                    <td data-label="11:30 AM to 12:30 PM">Prof. Sanjeev Kumar, HSB - "Building Self to Face the Challenges"</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>12.09.2024</td>
-                    <td>"Proficiency Module in English (Technical Writing)"</td>
-                    <td>"Proficiency Module in English (Importance of Phonetics)"</td>
-                    <td>Sh. Durgesh, Senior Bank Manager, PNB, GJU - "Banking Systems"</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">12.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">"Proficiency Module in English (Technical Writing)"</td>
+                    <td data-label="10:30 AM to 11:30 AM">"Proficiency Module in English (Importance of Phonetics)"</td>
+                    <td data-label="11:30 AM to 12:30 PM">Sh. Durgesh, Senior Bank Manager, PNB, GJU - "Banking Systems"</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>13.09.2024</td>
-                    <td>Prof. Sunita Rani, GJU S&T, Hisar</td>
-                    <td>Sh. Durgesh, Senior Bank Manager, PNB, GJU - "Banking Systems"</td>
-                    <td>Prof. Dalbir Singh, Director, Sports</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">13.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Prof. Sunita Rani, GJU S&T, Hisar</td>
+                    <td data-label="10:30 AM to 11:30 AM">Sh. Durgesh, Senior Bank Manager, PNB, GJU - "Banking Systems"</td>
+                    <td data-label="11:30 AM to 12:30 PM">Prof. Dalbir Singh, Director, Sports</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>16.09.2024</td>
-                    <td>Prof. Sanjeev Kumar, HSB - "Building Self to Face the Challenges"</td>
-                    <td>Prof. Dalbir Singh, Director, Sports</td>
-                    <td>Dr. Jitender Jangra - "Brain Balancing to enhance concentration and memory retention"</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">16.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Prof. Sanjeev Kumar, HSB - "Building Self to Face the Challenges"</td>
+                    <td data-label="10:30 AM to 11:30 AM">Prof. Dalbir Singh, Director, Sports</td>
+                    <td data-label="11:30 AM to 12:30 PM">Dr. Jitender Jangra - "Brain Balancing to enhance concentration and memory retention"</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>17.09.2024</td>
-                    <td>Prof. Sandeep Rana - "Self-Empowerment"</td>
-                    <td>Col. (Retd.) Bir Singh Sihag - "Life Values"</td>
-                    <td>Prof. Anjan Kumar Baral, Department of Printing Technology - "Future Technologies"</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">17.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Prof. Sandeep Rana - "Self-Empowerment"</td>
+                    <td data-label="10:30 AM to 11:30 AM">Col. (Retd.) Bir Singh Sihag - "Life Values"</td>
+                    <td data-label="11:30 AM to 12:30 PM">Prof. Anjan Kumar Baral, Department of Printing Technology - "Future Technologies"</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>18.09.2024</td>
-                    <td>Dr. Jitender Jangra - "Brain Balancing to enhance concentration and memory retention"</td>
-                    <td>Col. (Retd.) Bir Singh Sihag - "Life Values"</td>
-                    <td>Prof. Anjan Kumar Baral, Department of Printing Technology - "Future Technologies"</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">18.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Dr. Jitender Jangra - "Brain Balancing to enhance concentration and memory retention"</td>
+                    <td data-label="10:30 AM to 11:30 AM">Col. (Retd.) Bir Singh Sihag - "Life Values"</td>
+                    <td data-label="11:30 AM to 12:30 PM">Prof. Anjan Kumar Baral, Department of Printing Technology - "Future Technologies"</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>19.09.2024</td>
-                    <td>Departmental Activities</td>
-                    <td>Departmental Activities</td>
-                    <td>Departmental Activities</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">19.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Departmental Activities</td>
+                    <td data-label="10:30 AM to 11:30 AM">Departmental Activities</td>
+                    <td data-label="11:30 AM to 12:30 PM">Departmental Activities</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>20.09.2024</td>
-                    <td>Valedictory Session</td>
-                    <td>Departmental Activities</td>
-                    <td>Departmental Activities</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Date">20.09.2024</td>
+                    <td data-label="9:30 AM to 10:30 AM">Valedictory Session</td>
+                    <td data-label="10:30 AM to 11:30 AM">Departmental Activities</td>
+                    <td data-label="11:30 AM to 12:30 PM">Departmental Activities</td>
+                    <td data-label="1:30 PM to 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM to 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM to 4:30 PM">Physics</td>
                 </tr>
             </tbody>
         </table>
 
         <h2>Time Table - Bridge Course during Student Induction Program - 2024</h2>
-
         <table class="bridge-table">
             <thead>
                 <tr>
@@ -328,33 +395,25 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Group A : CSE-I, II; CSE(AI&ML)-I, II; IT; AI&DS</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Branches">Group A : CSE-I, II; CSE(AI&ML)-I, II; IT; AI&DS</td>
+                    <td data-label="1:30 PM - 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM - 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM - 4:30 PM">Physics</td>
                 </tr>
                 <tr>
-                    <td>Group B : ME; ECE+EBME; E&C; EE; PT+PKG; CE+FT</td>
-                    <td>Chemistry</td>
-                    <td>Mathematics</td>
-                    <td>Physics</td>
+                    <td data-label="Branches">Group B : ME; ECE+EBME; E&C; EE; PT+PKG; CE+FT</td>
+                    <td data-label="1:30 PM - 2:30 PM">Chemistry</td>
+                    <td data-label="2:30 PM - 3:30 PM">Mathematics</td>
+                    <td data-label="3:30 PM - 4:30 PM">Physics</td>
                 </tr>
             </tbody>
         </table>
-
-        <p><strong>Registration for STUDENT INDUCTION PROGRAM (SIP) 2024</strong></p>
-        <p>Asst Prof., Mentor B.Tech (A.I. & D.S.) 1st Year</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSctEVXfoEZyVm7q6_m_FnrzifGtUhIpb5nR2NM6fjhTfKRBsg/viewform" class="register-button" target="_blank">Register Here</a>
-        
-        <p><strong>Contact:</strong> Dr. Sandeep Dhankhar, +91 98126 69207</p>
     </div>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="footer">
-        <div>© 2024 GJUS&T-Hisar</div>
-        <div><a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></div>
+        <div>© 2024 GJU S&T, Hisar. All Rights Reserved.</div>
+        <div>Contact: <a href="mailto:info@gjust.ac.in">info@gjust.ac.in</a></div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

@@ -149,12 +149,7 @@
     </style>
 </head>
 <body>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sliding Notification Banner</title>
+
     <style>
         .notification {
             position: fixed;
@@ -183,8 +178,7 @@
             font-size: 20px;
         }
     </style>
-</head>
-<body>
+
     <div class="notification" id="notificationBar">
         <span>Register for the <strong>Student Induction Programme 2024</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSctEVXfoEZyVm7q6_m_FnrzifGtUhIpb5nR2NM6fjhTfKRBsg/viewform">here</a> | <a href="Tentative_Schedule_SIP_2024.pdf">Download Schedule</a></span>
         <span class="close-btn" onclick="closeNotification()">×</span>
@@ -195,8 +189,8 @@
             document.getElementById('notificationBar').style.transform = 'translateY(-100%)';
         }
     </script>
-</body>
-</html>
+
+
 
 
     <!-- Navigation Bar -->
@@ -416,6 +410,50 @@
         
         <p><strong>Contact:</strong> Dr. Sandeep Dhankhar, +91 98126 69207</p>
     </div>
+
+    <style>
+        .lottie-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007bff;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+        .lottie-notification a {
+            color: #ffdf00;
+            text-decoration: underline;
+        }
+        .lottie-container {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+
+    <div class="lottie-notification" id="lottieNotification">
+        <div class="lottie-container" id="lottie"></div>
+        <div>
+            <p><strong>Student Induction Programme 2024</strong> - Register <a href="https://docs.google.com/forms/d/e/1FAIpQLSctEVXfoEZyVm7q6_m_FnrzifGtUhIpb5nR2NM6fjhTfKRBsg/viewform">here</a> | Download <a href="Tentative_Schedule_SIP_2024.pdf">Schedule</a>.</p>
+        </div>
+    </div>
+    <script>
+        const animation = lottie.loadAnimation({
+            container: document.getElementById('lottie'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://assets2.lottiefiles.com/packages/lf20_w2k0g0t6.json' // Replace with your Lottie animation URL
+        });
+        setTimeout(() => document.getElementById('lottieNotification').style.display = 'none', 10000); // Hide after 10 seconds
+    </script>
+
 
     <!-- Footer Section -->
     <footer class="footer">

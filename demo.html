@@ -4,186 +4,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Website Example</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcL8X+6c+gkdfop3ZalP6HfU+2y+1tXc6nC6PnLVZ3t7ZsSxn5ICN5iRZEmFeM6X2O1aFA8F7/5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Example Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your custom styles -->
     <style>
+        /* Basic Styles for the Example Layout */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
 
-        .navbar {
-            background-color: #343a40;
-        }
-
-        .navbar-nav a {
-            color: #fff !important;
-        }
-
-        .hero-section {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        .hero-section h1 {
-            margin: 0;
-            font-size: 3em;
-        }
-
-        .hero-section p {
-            font-size: 1.2em;
-        }
-
         .container {
-            padding: 20px 0;
-        }
-
-        .program-card {
-            margin-bottom: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-        }
-
-        .program-card img {
-            width: 100%;
-            height: auto;
-        }
-
-        .program-card-body {
+            width: 80%;
+            margin: auto;
             padding: 20px;
         }
 
-        .program-card-body h5 {
-            margin-bottom: 15px;
+        h2, h3 {
+            color: #333;
         }
 
-        .footer {
-            background-color: #343a40;
+        .btn {
+            background-color: #673AB7;
             color: white;
+            padding: 10px 20px;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
         }
 
-        .footer a {
-            color: white;
-            margin: 0 10px;
-        }
-
-        .footer a:hover {
+        .btn-border {
+            border: 2px solid #673AB7;
+            color: #673AB7;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            display: inline-block;
             text-decoration: none;
-            color: #007bff;
         }
 
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 30px 0;
+        .btn-border:hover {
+            background-color: #673AB7;
+            color: white;
+        }
+
+        .program-details {
+            display: none;
+            margin: 10px 0;
+        }
+
+        .program-details p {
+            margin: 5px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .contact-information, .faculty-members, .photo-slide, .about-department, .entrance-test {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #673AB7;
+        }
+
+        .faculty-member {
+            margin-bottom: 20px;
+        }
+
+        .faculty-category {
+            margin-bottom: 30px;
+        }
+
+        .notification-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #673AB7;
+            color: #ffeb3b;
+            padding: 15px;
+            text-align: center;
+            transform: translateY(100%);
+            animation: slideUp 2s forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .notification-banner .close-btn {
+            background: #f44336;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+
+        .notification-banner a {
+            color: #ffeb3b;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            width: 80%;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
             }
 
-            .hero-section h1 {
-                font-size: 2.5em;
+            to {
+                transform: translateY(0);
             }
+        }
 
-            .hero-section p {
-                font-size: 1em;
-            }
+        .photo-slide {
+            overflow: hidden;
+        }
+
+        .photo-slide marquee {
+            display: flex;
+        }
+
+        .photo-slide img {
+            width: 150px;
+            height: auto;
+            margin-right: 10px;
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">My Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Programs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
+    <!-- Header Section -->
+    <header>
         <div class="container">
-            <h1>Welcome to My Website</h1>
-            <p>Your gateway to learning and success</p>
+            <h1>Example Website Header</h1>
         </div>
-    </section>
+    </header>
 
-    <!-- Programs Section -->
-    <section class="container">
-        <h2 class="text-center">Our Programs</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="program-card">
-                    <img src="program1.jpg" alt="Program 1">
-                    <div class="program-card-body">
-                        <h5 class="program-title">Program 1</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="program-card">
-                    <img src="program2.jpg" alt="Program 2">
-                    <div class="program-card-body">
-                        <h5 class="program-title">Program 2</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="program-card">
-                    <img src="program3.jpg" alt="Program 3">
-                    <div class="program-card-body">
-                        <h5 class="program-title">Program 3</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
+    <!-- Program Details Section -->
+    <section class="program-details">
+        <div class="container">
+            <h2>Programs</h2>
+
+            <div class="program" id="program2">
+                <h3 onclick="toggleDetails('details2')" class="btn">M.Sc. Computer Science (Artificial Intelligence & Data Science)</h3>
+                <div id="details2" class="program-details">
+                    <p><strong>Eligibility Criteria:</strong> The candidate(s) should have passed BCA/B.Sc. (Computer Science/IT/ Artificial Intelligence/ Data Science/ Machine Learning/ Cyber Security/ Blockchain/ IoT/ Cloud Computing)/ B.Sc. (Non-Medical)/ B.E. or B.Tech. (CSE/IT/Data Science/ AI/ Machine Learning/ ECE/ Software Engineering/ Cyber Security/ Blockchain/ IoT/ Cloud Computing)/ B.Voc. (Software Development/IT) / IT)/ or an equivalent degree with at least 50% marks (pass marks for SC candidates of Haryana) from any University / Institute recognized/ approved by UGC/ AICTE.</p>
+                    <p><strong>Seats:</strong> 50+2+1+1+1 #</p>
+                    <p><strong>Duration:</strong> 2 Year</p>
+                    <a target="_blank" href="https://gjuonline.ac.in/pgadmission/" class="btn-border">Apply Now</a>
+                    <a target="_blank" href="https://www.gjust.ac.in/Page/Index_Course?id=325&pid=149&mid=229&departmentId=325&catId=253" class="btn-border">Know More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Entrance Test Syllabus Section -->
+    <section class="entrance-test">
         <div class="container">
-            <p>© 2024 My Website | Follow us on</p>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <h2>Entrance Test Syllabus</h2>
+
+            <div class="program" id="program1">
+                <h3 onclick="toggleDetails('degree1')" class="btn">Integrated B.Sc. (Hons./ Hons. with Research) – M.Sc. Computer Science (Artificial Intelligence and Data Science)</h3>
+                <div id="degree1" class="program-details">
+                    <p>(i) Maximum Marks: 90 Time: 90 Minutes</p>
+                    <p>(ii) There will be 90 Questions consisting of three parts as under:</p>
+                    <ol>
+                        <li>Part-I: Mathematics
+                            <ul>
+                                <li>50 Questions (1-50)</li>
+                                <li>50 Marks</li>
+                            </ul>
+                        </li>
+                        <li>Part-II: Chemistry
+                            <ul>
+                                <li>20 Questions (51-70)</li>
+                                <li>20 Marks</li>
+                            </ul>
+                        </li>
+                        <li>Part-III: Physics
+                            <ul>
+                                <li>20 Questions (71-90)</li>
+                                <li>20 Marks</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p>(iii) Only multiple-choice questions with one correct answer will be asked in the Entrance Test.</p>
+                    <p>(iv) There will be no negative marking.</p>
+                    <a target="_blank" href="bsc.pdf" class="btn-border">Click here to download PDF</a>
+                </div>
+            </div>
+
+            <div class="program" id="program1">
+                <h3 onclick="toggleDetails('degree2')" class="btn">M.Sc. Computer Science (Artificial Intelligence and Data Science)</h3>
+                <div id="degree2" class="program-details">
+                    <p><strong>Scheme for Entrance Test:</strong></p>
+                    <ul>
+                        <li>Max. Marks: 100</li>
+                        <li>Time: 90 Minutes</li>
+                    </ul>
+                    <ol>
+                        <li>Section I: Computer Science
+                            <ul>
+                                <li>40 Questions (1-40)</li>
+                                <li>40 Marks</li>
+                            </ul>
+                        </li>
+                        <li>Section II: Mathematics
+                            <ul>
+                                <li>30 Questions (41-70)</li>
+                                <li>30 Marks</li>
+                            </ul>
+                        </li>
+                        <li>Section III: Statistics
+                            <ul>
+                                <li>30 Questions (71-100)</li>
+                                <li>30 Marks</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Additional Information:</strong></p>
+                    <ul>
+                        <li>There will be only multiple-choice questions with one correct answer asked in the Entrance Test.</li>
+                        <li>There will be no negative marking.</li>
+                    </ul>
+                    <a target="_blank" href="m.sc.pdf" class="btn-border">Click here to download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Structure Section -->
+    <section class="fee-structure">
+        <div class="container">
+            <h2>Fee Structure</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Fee Amount</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Category 1</td>
+                        <td>₹5000</td>
+                        <td>Detailed description of Category 1</td>
+                    </tr>
+                    <tr>
+                        <td>Category 2</td>
+                        <td>₹6000</td>
+                        <td>Detailed description of Category 2</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-information">
+        <div class="container">
+            <h2>Contact Information</h2>
+            <p><strong>Address:</strong> University Campus, City, State, ZIP</p>
+            <p><strong>Phone:</strong> +123-456-7890</p>
+            <p><strong>Email:</strong> info@university.com</p>
+        </div>
+    </section>
+
+    <!-- Faculty Members Section -->
+    <section class="faculty-members">
+        <div class="container">
+            <h2>Faculty Members</h2>
+
+            <div class="faculty-category">
+                <h3>Department Head</h3>
+                <div class="faculty-member">
+                    <h4>Dr. John Doe</h4>
+                    <p>Ph.D. in Computer Science</p>
+                </div>
+            </div>
+
+            <div class="faculty-category">
+                <h3>Professors</h3>
+                <div class="faculty-member">
+                    <h4>Dr. Jane Smith</h4>
+                    <p>Ph.D. in Artificial Intelligence</p>
+                </div>
+                <!-- Add more faculty members as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Slide Section -->
+    <section class="photo-slide">
+        <div class="container">
+            <h2>Photo Slide</h2>
+            <marquee>
+                <img src="photo1.jpg" alt="Photo 1">
+                <img src="photo2.jpg" alt="Photo 2">
+                <img src="photo3.jpg" alt="Photo 3">
+                <!-- Add more photos as needed -->
+            </marquee>
+        </div>
+    </section>
+
+    <!-- About Department Section -->
+    <section class="about-department">
+        <div class="container">
+            <h2>About the Department</h2>
+            <p>Welcome to the Department of Computer Science. We offer a variety of programs aimed at developing the next generation of computer scientists.</p>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="vision-mission">
+        <div class="container">
+            <h2>Vision & Mission</h2>
+            <p><strong>Vision:</strong> To be a world-class center of excellence in Computer Science and Engineering.</p>
+            <p><strong>Mission:</strong> To provide high-quality education and research opportunities in computer science.</p>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media">
+        <div class="container">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <!-- Add more social media links as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Example University. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Notification Banner (If applicable) -->
+    <div class="notification-banner">
+        <button class="close-btn">&times;</button>
+        <p>Important announcements and updates will be displayed here.</p>
+        <a href="#">Read More</a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </body>
 
 </html>

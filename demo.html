@@ -1,89 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Website Layout</title>
+    <title>Responsive Website Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcL8X+6c+gkdfop3ZalP6HfU+2y+1tXc6nC6PnLVZ3t7ZsSxn5ICN5iRZEmFeM6X2O1aFA8F7/5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Layout Styles */
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            min-height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem;
+        .navbar {
+            background-color: #343a40;
         }
 
-        header nav {
-            display: flex;
-            justify-content: space-between;
+        .navbar-nav a {
+            color: #fff !important;
         }
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0.5rem;
-        }
-
-        main {
-            padding: 1rem;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
+        .hero-section {
+            background-color: #007bff;
+            color: white;
             text-align: center;
-            padding: 0.5rem;
+            padding: 50px 0;
         }
 
-        /* Responsive Styles */
+        .hero-section h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+        }
+
+        .container {
+            padding: 20px 0;
+        }
+
+        .program-card {
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .program-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .program-card-body {
+            padding: 20px;
+        }
+
+        .program-card-body h5 {
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: none;
+            color: #007bff;
+        }
+
         @media (max-width: 768px) {
-            header nav {
-                flex-direction: column;
-                align-items: center;
+            .hero-section {
+                padding: 30px 0;
             }
 
-            header a {
-                margin: 0.5rem 0;
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-section p {
+                font-size: 1em;
             }
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#">MySite</a>
-            </div>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <h1>Welcome to My Website</h1>
-        <p>This is a basic example of a responsive website layout. You can add additional pages and styles to fit your needs.</p>
-    </main>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">My Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <footer>
-        <p>&copy; 2024 MySite. All rights reserved.</p>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to My Website</h1>
+            <p>Your gateway to learning and success</p>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="container">
+        <h2 class="text-center">Our Programs</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="program-card">
+                    <img src="program1.jpg" alt="Program 1">
+                    <div class="program-card-body">
+                        <h5 class="program-title">Program 1</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="program-card">
+                    <img src="program2.jpg" alt="Program 2">
+                    <div class="program-card-body">
+                        <h5 class="program-title">Program 2</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="program-card">
+                    <img src="program3.jpg" alt="Program 3">
+                    <div class="program-card-body">
+                        <h5 class="program-title">Program 3</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 My Website | Follow us on</p>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

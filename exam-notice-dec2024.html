@@ -62,42 +62,6 @@
         .content p {
             line-height: 1.6;
         }
-        .marquee-container {
-            background-color: white;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            margin: 20px auto;
-            padding: 10px;
-            width: 70%;
-            overflow: hidden;
-            position: relative;
-        }
-        .marquee-content {
-            display: flex;
-            animation: marquee 15s linear infinite;
-        }
-        .marquee-text {
-            padding: 0 20px;
-            white-space: nowrap;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .marquee-pause-btn {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            bottom: 10px;
-        }
-        .marquee-pause-btn:hover {
-            background-color: #575757;
-        }
         .section {
             background-color: white;
             margin-bottom: 20px;
@@ -154,28 +118,88 @@
                 flex-direction: column;
             }
         }
+        .mid-container {
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+        }
+        .mid-h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .mid-form {
+            margin-bottom: 20px;
+        }
+        .mid-input {
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .mid-button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .mid-button:hover {
+            background: #218838;
+        }
+        .mid-result-card {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .mid-result-card p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .mid-result-card span {
+            font-weight: bold;
+        }
+       
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav>
-        <div class="navbar-logo">
-            <img src="logo.png" alt="University Logo">
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-logo">
+                <img src="logo.png" alt="University Logo">
+            </div>
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sample.html">Exam Notices</a></li>
+            </ul>
+            <div class="navbar-toggle">
+                <a href="index.html" style="color:white;text-decoration:none">Home</a>
+            </div>
         </div>
-        <ul class="navbar-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sample.html">Exam Notices</a></li>
-        </ul>
     </nav>
 
     <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="University Logo" style="width: 150px;">
-        </div>
-        <div class="uni-name">
-            <h4>Department of Examinations, GJUS&T-Hisar</h4>
-            <h1>Exam Notice 2024-25</h1>
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <div class="header-info">
+                <h4>Department of Examinations, GJUS&T-Hisar</h4>
+                <h1>Exam Notice 2024-25</h1>
+            </div>
         </div>
     </header>
 
@@ -183,27 +207,25 @@
     <div class="marquee-container">
         <div class="marquee-content">
             <span class="marquee-text">
-                <p><strong>Important Dates and Deadlines:</strong></p>
-            </span>
-            <span class="marquee-text">
+                <p><strong>Important Dates and Deadlines</strong></p>
                 <p><strong>Portal Opening:</strong> 06.10.2024 | <strong>Tentative Commencement:</strong> 25.11.2024</p>
+                           <strong>Deadlines:</strong> Without Late Fee: 21.10.2024 | With Late Fee Rs. 500/-: 28.10.2024 | With Late Fee Rs. 1000/-: 31.10.2024 | With Late Fee Rs. 5000/- (Subject to Approval): 06.11.2024
+          
             </span>
             <span class="marquee-text">
                 <a href="https://student.gjuonline.ac.in/" target="_blank">Student Portal</a>
-            </span>
-            <span class="marquee-text">
-                <a href="https://gjust.ac.in/portal/upload/SCHEDULED_17September2024_15-42-36-60.pdf" target="_blank">Official Notice</a>
-            </span>
-            <span class="marquee-text">
-                <strong>Deadlines:</strong> Without Late Fee: 21.10.2024 | With Late Fee Rs. 500/-: 28.10.2024 | With Late Fee Rs. 1000/-: 31.10.2024 | With Late Fee Rs. 5000/- (Subject to Approval): 06.11.2024
-            </span>
+               <a href="https://gjust.ac.in/portal/upload/SCHEDULED_17September2024_15-42-36-60.pdf" target="_blank">Official Notice</a>
+             </span>
         </div>
         <button class="marquee-pause-btn" onclick="toggleMarquee()">Pause</button>
     </div>
 
     <!-- Main Content -->
-    <div class="section">
-        <h2>Exam Notice for Session 2024-25</h2>
+    <div class="mid-container">
+      <h2>Exam Notice for Session 2024-25</h2>
+        <div class="section">
+           <div class="table-container">
+     
         <table class="table">
             <thead>
                 <tr>
@@ -263,15 +285,17 @@
         <table class="table">
             <tbody>
                 <tr>
-                    <td>M.Sc. Data Science: 1st, 3rd & 5th Sem. (Batch 2020 onwards)</td>
+                    <td>B.Sc. (Hons.) Computer Data Science: 1st, 3rd, & 5th Sem. (Batch 2020 onwards)</td>
                 </tr>
                 <tr>
-                    <td>B.Sc. Data Science: 1st, 3rd & 5th Sem. (Batch 2020 onwards)</td>
+                    <td>Integrated B.Sc. (Hons./Hons. With Research): 1st Sem. (Batch 2024)</td>
                 </tr>
             </tbody>
         </table>
 
         <p>Please ensure that you submit your exam forms by the respective deadlines to avoid any additional fees and to ensure your registration.</p>
+    </div>
+    </div>
     </div>
 
     <!-- Footer Section -->
